@@ -1,0 +1,8 @@
+The order of the square is 2.
+The magic constant is 5.
+Found 2 magic series.
+Found 1 groups of rows and columns.
+Found valid 0 groups of squares.
+Found 0 unique row, column, square sets
+
+Iterating showing all the squares

@@ -1,0 +1,27 @@
+The order of the square is 3.
+The magic constant is 15.
+Found 8 magic series.
+Found 2 groups of rows and columns.
+Found valid 1 groups of squares.
+Found 1 unique row, column, square sets
+
+Iterating showing all the squares
+Set of groups:
+    rows:
+         1  5  9
+         2  6  7
+         3  4  8
+    columns:
+         1  6  8
+         2  4  9
+         3  5  7
+    diagonal options:
+         5  2  8
+         5  6  4
+
+Unique Squares
+     2  7  6
+     9  5  1
+     4  3  8
+
+
