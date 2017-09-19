@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+
+        <script type="text/javascript">
+            function loadJSON(name, callback) {
+                var xobj = new XMLHttpRequest();
+                    xobj.overrideMimeType("application/json");
+                xobj.open('GET', name, true); // Replace 'my_data' with the path to your file
+                xobj.onreadystatechange = function () {
+                      if (xobj.readyState == 4 && xobj.status == "200") {
+                        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                        callback(JSON.parse(xobj.responseText));
+                      }
+                };
+                xobj.send(null);
+            }
+            loadJSON('results_json_4.json', function (data) {
+                function changeSquare() {
+                    var square = data[Math.floor(Math.random() * data.length)]
+                    divs = document.getElementsByClassName('square')
+                    for (var i = 0; i < divs.length; i++) {
+                        divs[i].innerHTML = '<p>' + square[i] + '</p>'
+                        divs[i].id = "number_" + square[i]
+                    }
+                }
+                changeSquare()
+                setInterval(changeSquare, 10000)
+            })
+
+        </script>
+
+        <style media="screen">
+            body {
+                margin: 0;
+            }
+            .square {
+                width: 25vw;
+                height: 25vh;
+                float: left;
+                border: 1px solid black;
+                box-sizing: border-box;
+                position: relative;
+            }
+            .square p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+                padding: 0;
+                font-size: 20vh;
+            }
+            #number_1 {
+                background: lemonchiffon;
+            }
+            #number_2 {
+                background: gold;
+            }
+            #number_3 {
+                background: goldenrod;
+            }
+            #number_4 {
+                background: darkorange;
+            }
+
+            #number_5 {
+                background: tomato;
+            }
+            #number_6 {
+                background: crimson;
+            }
+            #number_7 {
+                background: darkred;
+                color: white;
+            }
+            #number_8 {
+                background: indigo;
+                color: white;
+            }
+
+            #number_9 {
+                background: darkslateblue;
+                color: white;
+            }
+            #number_10 {
+                background: slateblue;
+            }
+            #number_11 {
+                background: deepskyblue;
+            }
+            #number_12 {
+                background: blue;
+            }
+
+            #number_13 {
+                background: midnightblue;
+                color: white
+            }
+            #number_14 {
+                background: green;
+                color: black;
+            }
+            #number_15 {
+                background: darkolivegreen;
+            }
+            #number_16 {
+                background: lawngreen;
+            }
+        </style>
+    </body>
+</html>

@@ -1,5 +1,6 @@
 from copy import copy, deepcopy
 from sys import argv
+import json
 
 
 class RowColumnMixin(object):
@@ -325,7 +326,15 @@ class MagicSquareOfOrder(object):
         for group in self.square_groups:
             for unique in group.unique_square_sets:
                 for square in unique.squares:
-                    print " ".join(format(x, '2') for x in square)
+                    print "".join(format(x, '2') for x in square)
+
+    def print_json_for_squares(self):
+        all_squares = []
+        for group in self.square_groups:
+            for unique in group.unique_square_sets:
+                for square in unique.squares:
+                    all_squares.append(square)
+        print json.dumps(all_squares)
 
     def find_series(self):
         numbers = range(1, self.order * self.order + 1)
@@ -426,3 +435,5 @@ if __name__ == '__main__':
         group.print_information()
     elif output_type == "squares":
         group.print_squares()
+    elif output_type == "json":
+        group.print_json_for_squares()
